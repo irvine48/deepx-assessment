@@ -15,13 +15,13 @@ class WeatherTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('weathers')->insert([
+        DB::table('weather')->insert([
             'city_name' => 'London',
         ]);
-        DB::table('weathers')->insert([
+        DB::table('weather')->insert([
             'city_name' => 'New York',
         ]);
-        DB::table('weathers')->insert([
+        DB::table('weather')->insert([
             'city_name' => 'Berlin',
         ]);
     }

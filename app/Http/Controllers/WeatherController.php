@@ -9,7 +9,7 @@ use Config;
 
 use Inertia\Inertia;
 
-use App\Models\Weathers;
+use App\Models\Weather;
 
 class WeatherController extends Controller
 {
@@ -20,7 +20,7 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        $sampleCities = Weathers::all();
+        $sampleCities = Weather::all();
         $weatherDatas = [];
         $imageDatas = [];
         // Load data
@@ -94,7 +94,7 @@ class WeatherController extends Controller
     public function update(Request $request)
     {
         // $sampleCities = Inertia::getShared('monitored');
-        $sampleCity = new Weathers;
+        $sampleCity = new Weather;
         $sampleCity->city_name = $request->input('new_city');
         $sampleCity->save();
 
@@ -109,7 +109,7 @@ class WeatherController extends Controller
      */
     public function destroy(Request $request)
     {
-        $sampleCity = Weathers::find($request->input('id'));
+        $sampleCity = Weather::find($request->input('id'));
         $sampleCity->delete();
 
         return back();
